@@ -1,0 +1,51 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.9.+'
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
+/*
+Shared gradle properties
+ */
+ext {
+    daggerVersion = '1.2.1'
+    retrofitVersion = '1.5.0'
+    okhttpVersion = '1.5.0'
+    butterknifeVersion = '4.0.1'
+    rxjavaVersion = '0.17.5'
+
+    mockitoVersion = '1.9.5'
+    dexmakerVersion = '1.0'
+    androidSupportVersion = '19.1.+'
+    rxjavaVersion = '0.17.5'
+
+    libs = [
+            butterknife   : ('com.jakewharton:butterknife:' + butterknifeVersion),
+            dagger        : ('com.squareup.dagger:dagger:' + daggerVersion),
+            daggerCompiler: ('com.squareup.dagger:dagger-compiler:' + daggerVersion),
+            retrofit      : ('com.squareup.retrofit:retrofit:' + retrofitVersion),
+            retrofitXML   : ('com.squareup.retrofit:converter-simplexml:' + retrofitVersion),
+            okhttp        : ('com.squareup.okhttp:okhttp:' + okhttpVersion),
+            rxjava        : ('com.netflix.rxjava:rxjava-core:' + rxjavaVersion),
+            rxjavaAndroid : ('com.netflix.rxjava:rxjava-android:' + rxjavaVersion),
+            rxjava        : ('com.netflix.rxjava:rxjava-core:' + rxjavaVersion),
+            rxjavaAndroid : ('com.netflix.rxjava:rxjava-android:' + rxjavaVersion),
+    ]
+
+    testLibs = [
+            dexmaker       : ('com.google.dexmaker:dexmaker:' + dexmakerVersion),
+            dexmakerMockito: ('com.google.dexmaker:dexmaker-mockito:' + dexmakerVersion),
+            mockito        : ('org.mockito:mockito-core:' + mockitoVersion)
+    ]
+}
