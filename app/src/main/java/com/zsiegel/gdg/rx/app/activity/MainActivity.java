@@ -1,6 +1,7 @@
 package com.zsiegel.gdg.rx.app.activity;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.os.Bundle;
 import com.zsiegel.gdg.rx.app.R;
 import com.zsiegel.gdg.rx.app.RXGDGApp;
@@ -14,8 +15,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        RXGDGApp.get().inject(this);
-
+        setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
             getFragmentManager()
                     .beginTransaction()

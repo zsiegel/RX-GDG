@@ -14,9 +14,9 @@ public class RXGDGApp extends Application {
 
     private AppModule appModule;
 
-    public RXGDGApp() {
-        super();
-
+    @Override
+    public void onCreate() {
+        super.onCreate();
         appContext = (RXGDGApp) getApplicationContext();
         appModule = new AppModule(this);
         objectGraph = ObjectGraph.create(appModule);

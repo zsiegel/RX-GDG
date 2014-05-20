@@ -23,7 +23,7 @@ ext {
     retrofitVersion = '1.5.0'
     okhttpVersion = '1.5.0'
     butterknifeVersion = '4.0.1'
-    rxjavaVersion = '0.17.5'
+    rxjavaVersion = '0.18.3'
 
     mockitoVersion = '1.9.5'
     dexmakerVersion = '1.0'
@@ -37,8 +37,6 @@ ext {
             retrofit      : ('com.squareup.retrofit:retrofit:' + retrofitVersion),
             retrofitXML   : ('com.squareup.retrofit:converter-simplexml:' + retrofitVersion),
             okhttp        : ('com.squareup.okhttp:okhttp:' + okhttpVersion),
-            rxjava        : ('com.netflix.rxjava:rxjava-core:' + rxjavaVersion),
-            rxjavaAndroid : ('com.netflix.rxjava:rxjava-android:' + rxjavaVersion),
             rxjava        : ('com.netflix.rxjava:rxjava-core:' + rxjavaVersion),
             rxjavaAndroid : ('com.netflix.rxjava:rxjava-android:' + rxjavaVersion),
     ]

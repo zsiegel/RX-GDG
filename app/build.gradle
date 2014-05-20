@@ -4,6 +4,8 @@ android {
     compileSdkVersion 19
     buildToolsVersion "19.0.3"
 
+    sourceSets.androidTest.setRoot('src/test')
+
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 19
@@ -46,7 +48,8 @@ dependencies {
 
     compile libs.dagger
     compile libs.daggerCompiler
-
+    compile libs.rxjava
+    compile libs.rxjavaAndroid
     compile libs.butterknife
 
     //Testing
