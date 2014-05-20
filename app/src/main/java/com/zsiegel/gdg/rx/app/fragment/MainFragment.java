@@ -106,7 +106,7 @@ public class MainFragment extends Fragment {
 
                 @Override
                 public void onError(Throwable e) {
-                    Log.e(TAG, "An error occured", e);
+                    Log.e(TAG, "An error occurred", e);
                     dismissProgressDialog();
                 }
 
