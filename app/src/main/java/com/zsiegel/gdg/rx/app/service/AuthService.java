@@ -47,9 +47,9 @@ public class AuthService {
     }
 
     private void setCachedToken(String cachedToken) {
-        if (TextUtils.isEmpty(cachedToken)) {
+        if (TextUtils.isEmpty(this.cachedToken)) {
             synchronized (this) {
-                if (TextUtils.isEmpty(cachedToken)) {
+                if (TextUtils.isEmpty(this.cachedToken)) {
                     this.cachedToken = cachedToken;
                 }
             }

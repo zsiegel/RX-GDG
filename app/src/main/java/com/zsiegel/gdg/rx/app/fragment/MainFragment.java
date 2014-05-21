@@ -55,12 +55,18 @@ public class MainFragment extends Fragment {
         return view;
     }
 
+    /**
+     * If we have work being done we want to re-subscribe to the changes
+     */
     @Override
     public void onResume() {
         super.onResume();
         subscribe();
     }
 
+    /**
+     * We un-subscribe from the work being done
+     */
     @Override
     public void onPause() {
         super.onPause();
@@ -73,13 +79,14 @@ public class MainFragment extends Fragment {
      */
     @OnClick(R.id.start_work)
     public void startWork() {
+        if (notesObservable == null) {
+            notesObservable = appService.getNotes()
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .cache();
 
-        notesObservable = appService.getNotes()
-                                    .subscribeOn(Schedulers.io())
-                                    .observeOn(AndroidSchedulers.mainThread())
-                                    .cache();
-
-        subscribe();
+            subscribe();
+        }
     }
 
     /**
